@@ -1,11 +1,39 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build .
+docker tag 3470063cd158 techtrends:latest
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -p 7111:3111 techtrends:latest
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker ps #get container id from console
+docker logs a1956976fb33 
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.3:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [21/Sep/2022 18:33:29] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:33:29] "GET /static/css/main.css HTTP/1.1" 304 -
+Article "2020 CNCF Annual Report" retrieved
+172.17.0.1 - - [21/Sep/2022 18:33:31] "GET /1 HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:33:31] "GET /static/css/main.css HTTP/1.1" 304 -
+About page retrieved
+172.17.0.1 - - [21/Sep/2022 18:33:39] "GET /about HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:33:39] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [21/Sep/2022 18:33:43] "GET /create HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:33:43] "GET /static/css/main.css HTTP/1.1" 304 -
+Article "Test" created
+172.17.0.1 - - [21/Sep/2022 18:33:51] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [21/Sep/2022 18:33:51] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:33:51] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [21/Sep/2022 18:34:04] "GET /healthz HTTP/1.1" 200 -
+172.17.0.1 - - [21/Sep/2022 18:34:08] "GET /metrics HTTP/1.1" 200 -
+Post with id:"122" not found
+172.17.0.1 - - [21/Sep/2022 18:34:13] "GET /122 HTTP/1.1" 404 -
+172.17.0.1 - - [21/Sep/2022 18:34:13] "GET /static/css/main.css HTTP/1.1" 304 -

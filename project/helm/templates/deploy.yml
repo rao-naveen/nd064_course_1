@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name}}
+  namespace: {{ .Values.namespace}}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.app}}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.app}}
+    spec:
+      containers:
+      - name: {{ .Values.name}}
+        image: {{ .Values.dockerusername}} / {{.Values.image.repository}}:{{.Values.image.tag}}
+        pullpolicy: {{.Values.image.pullpolicy}}
+        resources:
+          limits:
+            memory: {{ .Values.resources.limits.memory}}
+            cpu: {{ .Values.resources.limits.cpu}}
+          requests:
+            memory: {{ .Values.resources.requests.memory}}
+            cpu: {{ .Values.resources.requests.cpu}}
+            
+
+        ports:
+        - containerPort: {{ .Values.containerport}}
+          protocol: TCP
+        livenessProbe:
+            httpGet:
+              path: {{ .Values.livenessProble.httpget.path}}
+              port: {{ .Values.livenessProble.httpget.port}}
+        readinessProbe:
+            httpGet:
+              path: {{ .Values.readinessProbe.httpget.path}}
+              port: {{ .Values.readinessProbe.httpget.port}}
+
+
+

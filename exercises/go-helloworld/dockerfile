@@ -1,0 +1,6 @@
+from golang:alpine
+workdir /go/src/app
+add . .
+run  go mod init && go build -o helloworld
+expose 6111
+cmd ["./helloworld"]
