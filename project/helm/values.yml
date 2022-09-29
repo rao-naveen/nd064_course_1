@@ -1,14 +1,14 @@
 namespace: sandbox
 app: techtrends
 service:
-    port: 4111
-    targetPort: 3111
-    protocol: TCP
-    type: ClusterIP
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 image:
-    repository: techtrends
-    tag: latest
-    pullpolicy: IfNotPresent
+  repository: techtrends
+  tag: latest
+  pullpolicy: IfNotPresent
 
 dockerusername: jnaveenrao
 replicaCount: 1
