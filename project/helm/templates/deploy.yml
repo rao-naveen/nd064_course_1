@@ -16,7 +16,7 @@ spec:
       containers:
       - name: {{ .Values.name}}
         image: {{ .Values.dockerusername}} / {{.Values.image.repository}}:{{.Values.image.tag}}
-        pullpolicy: {{.Values.image.pullpolicy}}
+        imagePullPolicy: {{.Values.image.pullpolicy}}
         resources:
           limits:
             memory: {{ .Values.resources.limits.memory}}
