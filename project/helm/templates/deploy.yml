@@ -31,12 +31,12 @@ spec:
           protocol: TCP
         livenessProbe:
             httpGet:
-              path: {{ .Values.livenessProble.httpget.path}}
-              port: {{ .Values.livenessProble.httpget.port}}
+              path: {{ .Values.livenessProble.path}}
+              port: {{ .Values.livenessProble.port}}
         readinessProbe:
             httpGet:
-              path: {{ .Values.readinessProbe.httpget.path}}
-              port: {{ .Values.readinessProbe.httpget.port}}
+              path: {{ .Values.readinessProbe.path}}
+              port: {{ .Values.readinessProbe.port}}
 
 
 
