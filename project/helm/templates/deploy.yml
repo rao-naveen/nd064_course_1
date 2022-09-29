@@ -27,7 +27,7 @@ spec:
             
 
         ports:
-        - containerPort: {{ .Values.containerport}}
+        - containerPort: {{ .Values.containerPort}}
           protocol: TCP
         livenessProbe:
             httpGet:
