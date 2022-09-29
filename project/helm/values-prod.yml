@@ -1,6 +1,6 @@
 namespace: prod
 service:
-  - port: 7111
+  port: 7111
 
 replicaCount: 5
 image:
