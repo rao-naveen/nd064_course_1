@@ -1,14 +1,15 @@
 namespace: sandbox
+name: techtrends
 app: techtrends
 service:
-    port: 4111
-    targetPort: 3111
-    protocol: TCP
-    type: ClusterIP
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 image:
-    repository: techtrends
-    tag: latest
-    pullpolicy: IfNotPresent
+  repository: techtrends
+  tag: latest
+  pullpolicy: IfNotPresent
 
 dockerusername: jnaveenrao
 replicaCount: 1
@@ -21,12 +22,8 @@ resources:
             cpu: "250m"
 containerPort: 3111
 livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3111
-
-  
+  path: /healthz
+  port: 3111
+readinessProbe:   
+  path: /healthz
+  port: 3111
